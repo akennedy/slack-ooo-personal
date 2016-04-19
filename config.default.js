@@ -1,18 +1,18 @@
 const config = {
   app: {
-    message: '', // The message you want to send to users
+    message: 'I am currently out of the office. I will be returning Monday, May 2nd.', // The message you want to send to users
     timebox: {
-      start: 0, // start timestamp, or parsable date (see http://dygraphs.com/date-formats.html)
-      end: 0, // end timestmap, or parsable date (see http://dygraphs.com/date-formats.html)
+      start: process.env.START, // start timestamp, or parsable date (see http://dygraphs.com/date-formats.html)
+      end: process.env.END, // end timestmap, or parsable date (see http://dygraphs.com/date-formats.html)
     },
-    reminder: 480, // minutes, Do not respond to the user for another 8 hours
+    reminder: 240, // minutes, Do not respond to the user for another 8 hours
     respond: {
       dm: true, // Respond to the user via DM
-      channel: false, // respond in the channel to everyone
+      channel: true, // respond in the channel to everyone
     },
   },
   slack: {
-    token: 'xoxb-Your-Token', // get it from https://api.slack.com/web
+    token: process.env.SLACK_TOKEN, // get it from https://api.slack.com/web
     autoReconnect: true,
     autoMark: false, // Mark messages as read
   },
